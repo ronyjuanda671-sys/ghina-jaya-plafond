@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GHINA JAYA PLAFOND – Jual & Pasang Plafond PVC</title>
+  <meta name="description" content="GHINA JAYA PLAFOND melayani jual bahan & pemasangan plafond PVC di Balangan dan sekitarnya." />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f5;
+      color: #333;
+    }
+    header {
+      background: #1f8f4a;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    header img {
+      width: 70px;
+      height: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+    header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+    .container {
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      color: #1f8f4a;
+      border-bottom: 2px solid #1f8f4a;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .about p {
+      line-height: 1.7;
+    }
+    .portfolio {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+    }
+    .portfolio img {
+      width: 100%;
+      border-radius: 10px;
+      display: none;
+    }
+    .portfolio img.active {
+      display: block;
+    }
+    .portfolio button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .portfolio .prev { left: 10px; }
+    .portfolio .next { right: 10px; }
+    .contact a {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 12px 20px;
+      background: #1f8f4a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="fotologo.png" alt="Logo GHINA JAYA PLAFOND" />
+  <div>
+    <h1>GHINA JAYA PLAFOND</h1>
+    <p>Melayani Jual Bahan & Pemasangan Plafond PVC</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="section about">
+    <h2>Tentang Kami</h2>
+    <p>
+      GHINA JAYA PLAFOND adalah usaha yang bergerak di bidang penjualan bahan dan jasa pemasangan plafond PVC.
+      Kami melayani wilayah Balangan dan sekitarnya dengan hasil rapi, kuat, dan harga bersaing.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Portofolio Pekerjaan</h2>
+    <div class="portfolio">
+      <img src="portfolio1.jpg" class="active" alt="Portofolio 1" />
+      <img src="portfolio2.jpg" alt="Portofolio 2" />
+      <img src="portfolio3.jpg" alt="Portofolio 3" />
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="section contact">
+    <h2>Kontak & Lokasi</h2>
+    <p>
+      📍 Alamat: Lingsir, Kec. Paringin Selatan, Kabupaten Balangan, Kalimantan Selatan
+    </p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Lingsir+Paringin+Selatan+Balangan" target="_blank">📍 Buka di Google Maps</a><br />
+    <a href="https://wa.me/6281346229370" target="_blank">💬 WhatsApp Kami</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 GHINA JAYA PLAFOND | Jual & Pasang Plafond PVC
+</footer>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.portfolio img');
+
+  function showSlide(index) {
+    slides.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+</script>
+
+</body>
+</html>
